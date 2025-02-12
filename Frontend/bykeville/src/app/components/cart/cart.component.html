@@ -1,0 +1,79 @@
+<div class="order-container">
+
+  <!--SCHEDA PRODOTTI-->
+
+  <div class="cart-container">
+
+    <h3>Cart</h3>
+    <hr>
+
+    <!-- Verifica se ci sono prodotti nell'array -->
+    <div *ngIf="products.length > 0; else noProducts">
+      <div *ngFor="let product of products; let i = index" class="product-item">
+
+        <!-- Colonna immagine -->
+        <div class="product-image">
+          <img src="data:image/png;base64,{{ product.thumbNailPhoto }}" alt="{{ product.name }}">
+        </div>
+
+        <!-- Colonna dettagli-->
+        <div class="product-details">
+          <h2>{{ product.name }}</h2>
+
+
+          <!-- Pulsanti + e - per modificare la quantità -->
+          <div class="quantity-control">
+            <p class="quantity-label">Quantity:</p>
+            <button class="quantity-btn" (click)="updateQuantity(i, -1)"
+              [disabled]="salesOrderDetails[i].orderQty <= 1">-</button>
+            <span class="quantity">{{ salesOrderDetails[i].orderQty }}</span>
+            <button class="quantity-btn" (click)="updateQuantity(i, 1)">+</button>
+          </div>
+        </div>
+
+        <div class="product-actions">
+          <!-- Prezzo e bottone elimina -->
+          <p>{{ product.listPrice }}€</p>
+          <button class="BVbutton delete-btn" (click)="removeProduct(product)">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Se l'array è vuoto, mostra un messaggio -->
+    <ng-template #noProducts>
+      <p>You have yet to add a product to your order.</p>
+    </ng-template>
+  
+  
+  </div>
+
+
+  <div *ngIf="products.length > 0" class="total-container">
+    <!-- Mostra il prezzo totale dell'ordine -->
+    <div class="total-price">
+      <h3>Order summary</h3>
+      <hr>
+      <div class="price-row">
+        <span>Subtotal:</span>
+          <span>{{ salesOrderHeader[0].subTotal }}€</span>
+      </div>
+      <div class="price-row">
+        <span>Shipping: </span>
+        <span>{{ salesOrderHeader[0].freight }}€</span>
+      </div>
+      <div class="price-row">
+        <span>Tax: </span>
+        <span>{{ salesOrderHeader[0].taxAmt }}€</span>
+      </div>
+      <hr>
+      <div class="price-row">
+        <span>Total order:: </span>
+        <span>€{{ salesOrderHeader[0].totalDue }}</span>
+      </div>
+    </div>
+
+    <!-- Bottone per effettuare l'ordine -->
+    <button class="BVbutton order-btn nav-link" routerLink="/salesdata">Proceed to order</button>
+  </div>
+
+</div>

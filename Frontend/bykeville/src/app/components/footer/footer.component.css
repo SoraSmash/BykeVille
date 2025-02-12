@@ -1,0 +1,103 @@
+footer {
+  padding: 40px 0;
+  background-color: #111216; 
+  color: #797C7F; 
+  text-align: center;  
+  border-top: 2px solid #E34715; 
+  border-radius: 8px;
+}
+
+.footer-section h4 {
+  font-family: "Arial", sans-serif;
+  margin-bottom: 20px;
+  color: #E34715; ;  /* Un colore blu per i titoli */
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; 
+  justify-content: center; 
+  flex-wrap: wrap;
+}
+
+footer ul li {
+  display: inline-block;
+  margin: 5px;
+}
+
+footer ul li a {
+  padding: 12px 20px;
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+  color: #797C7F; 
+  font-size: 14px;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+footer ul li a:hover {
+  background-color: #E34715;;  
+  color: #111216;  
+  border-radius: 5px;
+}
+
+footer .social li a {
+  font-size: 18px;
+  color: #E34715; 
+}
+
+footer .social li a:hover {
+  color: 111216;  /* Colore bianco per i link social al passaggio del mouse */
+}
+
+footer p {
+  margin-top: 20px;
+  color: #7f8c8d;  
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.footer-section form input,
+.footer-section form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+footer .footer-section form input {
+  border: 1px solid #ddd;  /* Bordi sottili per il campo input */
+}
+
+
+
+/* Media queries per ottimizzare il footer su dispositivi mobili */
+@media (max-width: 768px) {
+  footer ul {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  footer .footer-section form {
+    width: 90%; 
+  }
+
+  .footer-section form input,
+  .footer-section form button {
+    align-items: center;
+  }
+
+}
+
+input {
+  background-color: #1A1C20;
+  color: #797C7F;
+  border: 2px solid #2B2F35 !important;
+  outline:none;
+  border-radius:8px;
+  padding: 5px;
+  margin-bottom: 10px;
+}

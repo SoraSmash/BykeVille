@@ -1,0 +1,53 @@
+body {
+    background: #111216;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.logout-container {
+    background-color: #1A1C20;
+    border-color: #666666;
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.logout-icon {
+    font-size: 5rem;
+    color: #f8d210;
+    margin-bottom: 20px;
+}
+
+
+h1 {
+    padding-bottom: 15px;
+    margin: 0;
+    color: #E34715
+}
+
+/*
+
+Colori scuri: 
+#111216
+#1A1C20
+
+Colori medi:
+#2B2F35
+#2E3339
+
+Colori chiari:
+#666666
+#797C7F
+
+Colore accento:
+#E34715
+
+*/

@@ -1,0 +1,210 @@
+.container{
+    margin-top:30px;
+}
+
+
+.profile-container {
+    max-width: 1200px;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 30px;
+}
+
+.profile-picture img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+
+}
+
+h2, h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+
+.info-label {
+    text-align: left;
+
+}
+
+.form-label{
+    padding-bottom:0;
+    margin-bottom:0;
+    padding-top:15px;
+}
+
+.form-control {
+    border: 1px solid #2B2F35;
+    border-radius: 4px;
+    background-color: #111216;
+    color: #666666;
+}
+
+
+
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.cancel{
+    background-color:#666666;
+}
+
+
+
+
+
+
+
+/*FOR CHANGE PASSWORD*/
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: #797C7F;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #2B2F35;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #E34715;
+    box-shadow: 0 0 5px rgba(150, 150, 150, 0.3);
+}
+
+
+
+
+
+/* User Card Style */
+.user-card {
+    background-color: #1A1C20;
+    border: 1px solid #2B2F35 !important;
+    color: #797C7F;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.user-card img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.user-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.user-card p {
+    margin: 0;
+}
+
+
+
+
+
+
+
+/* Popup Styling */
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #1A1C20;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.popup-content h3 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.popup-content .form-group {
+    margin-bottom: 15px;
+}
+
+.popup-content input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #2B2F35;
+    border-radius: 5px;
+}
+
+.popup-content input:focus {
+    border-color: #E34715;
+    box-shadow: 0 0 5px rgba(150, 150, 150, 0.3);
+}
+
+
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 20px;
+    }
+
+    .user-card {
+        margin-bottom: 15px;
+    }
+}
+
+
+
+/*
+
+I COLORI TUTTI NOSTRI 
+
+Colori scuri: 
+#111216
+#1A1C20
+
+Colori medi:
+#2B2F35
+#2E3339
+
+Colori chiari:
+#666666
+#797C7F
+
+Colore accento:
+#E34715
+
+*/

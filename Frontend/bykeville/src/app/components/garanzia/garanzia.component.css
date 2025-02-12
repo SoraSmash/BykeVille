@@ -1,0 +1,17 @@
+.garanzia-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  
+  font-family: 'Arial', sans-serif;
+}
+
+
+p {
+  line-height: 1.6;
+}
+
+h1, h2 {
+  margin-left:0;
+  padding-left:0;
+}

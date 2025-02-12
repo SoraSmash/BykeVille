@@ -1,0 +1,184 @@
+/* Contenitore principale */
+.product-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  background-color: #111216;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* Immagine prodotto */
+.product-image {
+  width: 50%; /* Aumentato da 40% a 50% per ingrandire l'immagine */
+  height: 400px; /* Imposta un'altezza fissa per l'immagine */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px; /* Distanza tra immagine e dettagli del prodotto */
+}
+
+.product-image img {
+  width: 100%; /* L'immagine occupa tutta la larghezza del contenitore */
+  height: 100%; /* L'immagine occupa tutta l'altezza del contenitore */
+  border-radius: 8px;
+  object-fit: cover; /* Fa in modo che l'immagine riempia completamente il contenitore senza distorsioni */
+}
+
+/* Dettagli prodotto */
+.product-details {
+  width: 45%; 
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.product-price {
+  margin-top: 15px;
+}
+
+.list-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #E34715;
+  font-size:xx-large;
+}
+
+.product-description {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #797C7F;
+  background-color: #1A1C20;
+  padding: 12px 20px;
+  border-radius: 5px;
+  border: 1px solid #2B2F35;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.product-actions {
+  margin: 10px 0;
+}
+
+
+/* Stato prodotto ritirato */
+.product-status {
+  margin-top: 20px;
+  background-color: #111216;
+  padding: 10px;
+  border-radius: 5px;
+  color: #E34715;
+  text-align: center;
+  font-weight: bold;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #E34715;
+  padding: 20px;
+}
+
+.color-selection button.selected, .size-selection button.selected {
+  background-color: #E34715; /* Colore accento */
+  border-color: #E34715;
+  color: #111216;
+}
+
+/*Struttura dei selettori con Flex */
+
+.color-selection,
+.size-selection {
+  flex: 1; /* Le sezioni occupano lo stesso spazio */
+  margin: 10px;
+}
+.selection-container {
+display: flex;
+flex-wrap: wrap; /* Permette di andare su più righe se lo spazio è ridotto */
+gap: 20px; /* Spazio tra le sezioni */
+justify-content: space-between;
+align-items: flex-start;
+}
+
+/* Stile dei bottoni */
+
+/* Stile al passaggio del mouse */
+.color-selection button:hover,
+.size-selection button:hover {
+  background-color: #E34715;
+  color: #111216;
+  border-color: #E34715;
+  transform: scale(1.05); 
+  font-weight: bold;
+}
+
+/* Bottoni selezionati */
+.color-selection button.selected,
+.size-selection button.selected {
+  background-color: #E34715; 
+  color: #111216;
+  border-color: #E34715;
+  font-weight: bold;
+}
+
+
+.color-selection button,
+.size-selection button {
+  background-color: #1A1C20; 
+  color: #797C7F; 
+  border: 1px solid #2B2F35; 
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Leggera ombra */
+}
+
+
+/* Override */
+
+h3{
+padding-left: 0;
+}
+
+.color-selection h3, .size-selection h3 {
+font-size: 18px;
+margin-bottom: 10px;
+color: #797C7F
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+/* Disposizione verticale */
+.selection-container {
+    flex-direction: column; 
+    gap: 15px;
+}
+}
+
+
+
+
+/*
+
+Colori scuri: 
+#111216
+#1A1C20
+
+Colori medi:
+#2B2F35
+#2E3339
+
+Colori chiari:
+#666666
+#797C7F
+
+Colore accento:
+#E34715
+
+*/

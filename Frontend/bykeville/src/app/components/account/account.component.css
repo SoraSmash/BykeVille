@@ -1,0 +1,84 @@
+.card {
+  background-color:#1A1C20;
+  transition: transform 0.3s;
+  border:none;
+  padding:20px;
+}
+
+.card:hover {
+  border: 2px solid #E34715; 
+  border-radius:8px;
+}
+
+.container {
+  background-color: #1A1C20;
+  border: 1px solid #2E3339;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 50px;
+}
+
+h2{
+  font-weight:bold;
+}
+
+
+.material-symbols-outlined {
+  color: #E34715;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+.card-body {
+
+  border:none;
+  outline:none;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: left;
+
+}
+
+.card-details {
+  display: grid;
+  grid-template-rows: auto auto;
+}
+
+h5 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #797C7F;
+}
+
+.card-text {
+  margin: 0;
+  font-size: 1rem;
+  color: #797C7F;
+}
+
+/*
+
+I COLORI TUTTI NOSTRI 
+
+Colori scuri: 
+#111216
+#1A1C20
+
+Colori medi:
+#2B2F35
+#2E3339
+
+Colori chiari:
+#666666
+#797C7F
+
+Colore accento:
+#E34715
+
+*/

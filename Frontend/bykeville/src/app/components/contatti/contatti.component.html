@@ -1,0 +1,36 @@
+<div class="contact-container">
+  <h1>Contact Us</h1>
+  <div class="info-section">
+    <div class="info-box">
+      <i class="icon fas fa-headset"></i>
+      <h3>Customer Service</h3>
+      <p>056-1234567</p>
+    </div>
+    <div class="info-box">
+      <i class="icon fas fa-envelope"></i>
+      <h3>Mail Address</h3>
+      <p>support&#64;bykeville.com</p>
+    </div>
+    <div class="info-box">
+      <i class="icon fas fa-map-marker-alt"></i>
+      <h3>Office</h3>
+      <p>16192 Coastal Highway Lewes, Delaware</p>
+    </div>
+  </div>
+
+  <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="contact-form">
+    <div class="form-row">
+      <input type="text" name="name" placeholder="Full Name" ngModel required />
+      <input type="email" name="email" placeholder="Email Address" ngModel required />
+      <input type="text" name="phone" placeholder="Phone Number" ngModel />
+    </div>
+    <textarea
+      name="message"
+      rows="5"
+      placeholder="Your Message"
+      ngModel
+      required
+    ></textarea>
+    <button type="submit" [disabled]="!contactForm.valid" class="submit-btn">Send Form →</button>
+  </form>
+</div>

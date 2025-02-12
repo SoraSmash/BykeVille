@@ -1,0 +1,13 @@
+<h2>New Arrivals</h2>
+<div class="on-sale-container">
+  <app-product-card *ngFor="let item of newArrivals" [name]="item.name" [thumbNailPhoto]="item.thumbNailPhoto"
+    [listPrice]="item.listPrice" [productId]="item.productId">
+  </app-product-card>
+</div>
+
+<h2>Most Purchased</h2>
+<div class="on-sale-container">
+  <app-product-card *ngFor="let item of mostPurchased" [name]="item.name" [thumbNailPhoto]="item.thumbNailPhoto"
+    [listPrice]="item.listPrice" [productId]="item.productId">
+  </app-product-card>
+</div>

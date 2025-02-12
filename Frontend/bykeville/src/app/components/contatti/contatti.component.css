@@ -1,0 +1,120 @@
+.contact-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  color: #E34715;
+  
+  font-family: 'Arial', sans-serif;
+}
+
+h1, h3 {
+  margin-right:0;
+  padding:0;
+  margin-bottom: 20px;
+
+}
+
+.info-section {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.info-box {
+  background-color: #1A1C20;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 28%;
+}
+
+.info-box h3 {
+  margin: 10px 0;
+}
+
+.info-box p {
+  font-size: 14px;
+  color: #797C7F;
+}
+
+.icon {
+  font-size: 30px;
+  color: #6a5acd;
+}
+
+.contact-form {
+  background: #1A1C20;
+  padding: 20px;
+  border-radius: 10px;
+  color: #E34715;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input,
+textarea {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #2E3339;
+  border-radius: 10px;
+  background-color: #111216;
+  color: #797C7F;
+  outline: none;
+}
+
+textarea {
+  width: 100%;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #2E3339;
+}
+
+.submit-btn {
+  background-color: #E34715;
+  color: #111216;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-btn:disabled {
+  background-color: #444;
+  color:#1A1C20;
+  cursor: not-allowed;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: #b3360d;
+}
+
+
+
+/*
+
+I COLORI TUTTI NOSTRI 
+
+Colori scuri: 
+#111216
+#1A1C20
+
+Colori medi:
+#2B2F35
+#2E3339
+
+Colori chiari:
+#666666
+#797C7F
+
+Colore accento:
+#E34715
+
+*/

@@ -1,0 +1,178 @@
+<div class="container mt-5">
+
+    <img src="Logo_c.png" alt="BykeVille" class="BVlogo">
+
+    <h3 class="card-title text-center mb-4">Create a new account</h3>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+
+                    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+
+
+                        <!-- Title -->
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title</label><span style="color:#E34715"> *</span>
+                            <select id="title" formControlName="title" class="form-control-alt"
+                                [ngClass]="{'is-invalid': signUpForm.get('title')?.invalid && signUpForm.get('title')?.touched}">
+                                <option *ngFor="let title of titles" [value]="title">{{ title }}</option>
+                            </select>
+                            <div *ngIf="signUpForm.get('title')?.invalid && signUpForm.get('title')?.touched"
+                                class="invalid-feedback">
+                                Title is required.
+                            </div>
+                        </div>
+
+                        <!-- Suffix -->
+                        <div class="mb-3">
+                            <label for="suffix" class="form-label">Suffix</label><span style="color:#E34715"> *</span>
+                            <select id="suffix" formControlName="suffix" class="form-control-alt"
+                                [ngClass]="{'is-invalid': signUpForm.get('suffix')?.invalid && signUpForm.get('suffix')?.touched}">
+                                <option *ngFor="let suffix of suffixes" [value]="suffix">{{ suffix }}</option>
+                            </select>
+                            <div *ngIf="signUpForm.get('suffix')?.invalid && signUpForm.get('suffix')?.touched"
+                                class="invalid-feedback">
+                                Suffix is required.
+                            </div>
+                        </div>
+
+                        <!-- First Name -->
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">First Name</label><span style="color:#E34715"> *</span>
+                            <input type="text" id="firstName" formControlName="firstName" class="form-control-alt"
+                                placeholder="Enter your first name"
+                                [ngClass]="{'is-invalid': signUpForm.get('firstName')?.invalid && signUpForm.get('firstName')?.touched}" />
+                            <div *ngIf="signUpForm.get('firstName')?.invalid && signUpForm.get('firstName')?.touched"
+                                class="invalid-feedback">
+                                First name is required.
+                            </div>
+                        </div>
+
+
+                        
+
+
+                           <!-- MiddleName -->
+                           <div class="mb-3">
+                            <label for="MiddleName" class="form-label">Middle Name</label>
+                            <input type="text" id="MiddleName" formControlName="MiddleName" class="form-control-alt"
+                                placeholder="Enter your MiddleName"
+                                [ngClass]="{'is-invalid': signUpForm.get('MiddleName')?.invalid && signUpForm.get('MiddleName')?.touched}" />
+                        </div>
+
+                        <!-- Last Name -->
+                        <div class="mb-3">
+                            <label for="lastName" class="form-label">Last Name</label><span style="color:#E34715"> *</span>
+                            <input type="text" id="lastName" formControlName="lastName" class="form-control-alt"
+                                placeholder="Enter your last name"
+                                [ngClass]="{'is-invalid': signUpForm.get('lastName')?.invalid && signUpForm.get('lastName')?.touched}" />
+                            <div *ngIf="signUpForm.get('lastName')?.invalid && signUpForm.get('lastName')?.touched"
+                                class="invalid-feedback">
+                                Last name is required.
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="emailAddress" class="form-label">Email</label><span style="color:#E34715"> *</span>
+                            <input type="email" id="emailAddress" formControlName="emailAddress" class="form-control-alt"
+                                placeholder="Enter your email"
+                                [ngClass]="{'is-invalid': signUpForm.get('emailAddress')?.invalid && signUpForm.get('emailAddress')?.touched}" />
+                            <div *ngIf="signUpForm.get('emailAddress')?.invalid && signUpForm.get('emailAddress')?.touched"
+                                class="invalid-feedback">
+                                Email is required.
+                            </div>
+                        </div>
+
+                        <!-- Azienda -->
+                        <div class="mb-3">
+                            <label for="company" class="form-label">Company</label><span style="color:#E34715"> *</span>
+                            <input type="text" id="CompanyName" formControlName="CompanyName" class="form-control-alt"
+                                placeholder="Enter your company name"
+                                [ngClass]="{'is-invalid': signUpForm.get('CompanyName')?.invalid && signUpForm.get('CompanyName')?.touched}" />
+                            <div *ngIf="signUpForm.get('CompanyName')?.invalid && signUpForm.get('CompanyName')?.touched"
+                                class="invalid-feedback">
+                                Company Name Is required
+                            </div>
+
+
+
+                        </div>
+
+                        <!-- Telefono -->
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label><span style="color:#E34715"> *</span>
+                            <input type="text" id="phone" formControlName="phone" class="form-control-alt"
+                                placeholder="Enter your phone number"
+                                [ngClass]="{'is-invalid': signUpForm.get('phone')?.invalid && signUpForm.get('phone')?.touched}" />
+                            <div *ngIf="signUpForm.get('phone')?.invalid && signUpForm.get('phone')?.touched"
+                                class="invalid-feedback">
+                                phone Is required
+                            </div>
+                        </div>
+
+
+
+
+
+                        <!-- Password -->
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label><span style="color:#E34715"> *</span>
+                            <input type="password" id="password" formControlName="passwordHash" class="form-control-alt"
+                                placeholder="Enter your password" [ngClass]="{
+        'is-invalid': signUpForm.get('passwordHash')?.invalid && signUpForm.get('passwordHash')?.touched
+      }" />
+                            <div *ngIf="signUpForm.get('passwordHash')?.invalid && signUpForm.get('passwordHash')?.touched"
+                                class="invalid-feedback">
+                                Password is required.
+                            </div>
+                        </div>
+
+                        <!-- Conferma Password -->
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label><span style="color:#E34715"> *</span>
+                            <input type="password" id="confirmPassword" formControlName="confirmPassword"
+                                class="form-control-alt" placeholder="Confirm your password" [ngClass]="{
+        'is-invalid': signUpForm.hasError('passwordsMismatch') && signUpForm.get('confirmPassword')?.touched
+      }" />
+                            <div *ngIf="signUpForm.hasError('passwordsMismatch') && signUpForm.get('confirmPassword')?.touched"
+                                class="invalid-feedback">
+                                Passwords do not match.
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                        <!-- Checkbox Accettazione -->
+                        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                            <!-- Checkbox Accettazione -->
+                            <div class="mb-3 form-check">
+                                <input 
+                                    type="checkbox" 
+                                    id="termsAccepted" 
+                                    formControlName="termsAccepted" 
+                                    class="form-check-input" 
+                                />
+                                <label for="termsAccepted" class="form-check-label">
+                                    Accept Terms & Conditions
+                                </label>
+                            </div>
+                        
+                            <button type="submit" class="BVbutton">Sign Up</button>
+                        </form>
+
+                        <div class="required-text">
+                            <span style="color:#E34715">*</span><span> = Required</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

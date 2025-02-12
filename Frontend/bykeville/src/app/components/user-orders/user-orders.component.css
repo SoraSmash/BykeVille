@@ -1,0 +1,111 @@
+/* Contenitore generale degli ordini */
+.order-container {
+  display:flex;
+  flex-direction:column;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Separazione tra i vari ordini */
+.order-item {
+  margin: 30px;
+  padding: 20px;
+  border: 1px solid #2B2F35;
+  border-radius: 8px;
+  background-color: #1A1C20;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Dettagli del prodotto */
+.product-item {
+  align-items: center;
+  gap: 20px;
+  background-color: #1A1C20;
+  border-bottom: 1px solid #2E3339;
+  padding: 15px;
+
+}
+
+.product-item:last-child {
+  border: none;
+}
+
+
+.product-item img {
+  max-width: 100px;
+  height: auto;
+  margin-right: 15px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.product-item p {
+  font-size: 1rem;
+  color: #777;
+  margin: 5px 0;
+}
+
+/* Totale ordine */
+.total-price {
+  display: flex;
+  flex-direction: column; /* Gli elementi all'interno saranno in colonna */
+  padding: 15px;
+  border-top: 2px solid #2E3339;
+  margin-top: 20px;
+  width: 100%; /* Assicurati che occupi tutta la larghezza */
+  align-items: flex-end; /* Allinea tutto il contenuto a destra */
+}
+
+.price-container {
+  width:fit-content;
+  padding: 15px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+
+}
+
+
+/* Messaggio per quando non ci sono ordini */
+#noOrders p {
+  font-size: 1.2rem;
+  color: #797C7F;
+}
+
+h2,
+h3 {
+  margin: 0px;
+  padding-left: 0px;
+}
+
+h1 {
+  margin: 20px;
+}
+
+h5{
+  padding-right:10px;
+  padding-left:0;
+}
+
+/*
+
+Colori scuri: 
+#111216
+#1A1C20
+
+Colori medi:
+#2B2F35
+#2E3339
+
+Colori chiari:
+#666666
+#797C7F
+
+Colore accento:
+#E34715
+
+*/

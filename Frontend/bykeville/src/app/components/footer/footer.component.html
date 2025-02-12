@@ -1,0 +1,57 @@
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <!-- Sezione su BikeVille -->
+      <div class="col-md-3 footer-section">
+        <h4>About BikeVille</h4>
+        <ul>
+          <li><a routerLink="/aboutus">About</a></li>
+          <li><a href="https://www.betacom.it/betacom-academy/" target="_blank" rel="noopener noreferrer">Advertisement</a></li>
+          <li><a class="nav-link" routerLink="/contatti">Contacts</a></li>
+        </ul>
+      </div>
+
+      <!-- Sezione Supporto -->
+      <div class="col-md-3 footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a class="nav-link" routerLink="/acquisti">How to shop</a></li>
+          <!-- Aggiungi il link al supporto -->
+          <li><a class="nav-link" routerLink="/secondamano">Second Hand</a></li>
+          <li><a class="nav-link" routerLink="/garanzia">Customer Guarantee</a></li>
+        </ul>
+      </div>
+
+      <!-- Sezione Social -->
+      <div class="col-md-3 footer-section">
+        <h4>Social</h4>
+        <ul class="social">
+          <li><a href="https://www.betacom.it/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          <li><a href="https://www.betacom.it/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.betacom.it/" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+        </ul>
+      </div>
+
+      <!-- Sezione Newsletter -->
+      <div class="col-md-3 footer-section">
+        <h4>Newsletter</h4>
+        <form (ngSubmit)="onSubscribe(newsletterForm)" #newsletterForm="ngForm">
+          <input type="email" name="email" placeholder="Enter email"
+            ngModel required email #email="ngModel">
+
+          <!-- Messaggio di errore per email non valida -->
+          <div *ngIf="email.invalid && email.touched" class="error-message">
+            Please enter a valid email address.
+          </div>
+
+          <button type="submit" class="BVbutton" style="width: 100%;" [disabled]="!newsletterForm.valid">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <p>&copy; 2024 BikeVille. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

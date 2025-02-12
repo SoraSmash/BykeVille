@@ -1,0 +1,15 @@
+<h1>Products in category: "{{ categoryName }}"</h1>
+  
+    <div *ngIf="products.length > 0; else noResults" class="on-sale-container">
+        <!-- Utilizzo del componente product-card -->
+        <div *ngFor="let product of products">
+          <app-product-card [name]="product.name" [thumbNailPhoto]="product.thumbNailPhoto" [listPrice]="product.listPrice" [productId]="product.productId">
+          </app-product-card>
+        </div>
+      </div>
+      
+      <!-- Template da mostrare se non ci sono risultati -->
+      <ng-template #noResults>
+        <p>No products were found for "{{ categoryName }}".</p>
+      </ng-template>
+  

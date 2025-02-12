@@ -1,0 +1,78 @@
+<div class="order-container">
+  <h1>Order list</h1>
+
+
+  <!-- Verifica se ci sono ordini -->
+  <div *ngIf="salesOrderHeaders.length > 0; else noOrders">
+    <div *ngFor="let order of salesOrderHeaders; let orderIndex = index" class="order-item">
+
+      <h2>Order: {{ order.purchaseOrderNumber }}</h2>
+      <p>Order placed on the day: {{ order.shipDate | date: 'dd/MM/yyyy' }}</p>
+
+      
+
+      <!-- Ottieni i dettagli dell'ordine per questo salesOrderId -->
+      <div *ngIf="getOrderDetailsBySalesOrderId(order.salesOrderId).length > 0" class="test-orders">
+
+
+        <div *ngFor="let detail of getOrderDetailsBySalesOrderId(order.salesOrderId)" class="product-item">
+
+          <!-- Ottieni il prodotto per il dettaglio corrente -->
+          <div *ngIf="getProductForDetail(detail)">
+            <div style="display: flex; align-items: center;">
+              <!-- Mostra l'immagine del prodotto -->
+              <img *ngIf="getProductForDetail(detail)?.thumbNailPhoto"
+                src="data:image/png;base64,{{ getProductForDetail(detail)?.thumbNailPhoto }}"
+                alt="{{ getProductForDetail(detail)?.name }}" class="product-thumbnail" />
+
+              <div style="margin-left: 15px;">
+                <!-- Mostra il nome del prodotto -->
+                <h3>{{ getProductForDetail(detail)?.name }}</h3>
+
+                <!-- Mostra il prezzo unitario e la quantità -->
+                <p>Unit price: €{{ detail.unitPrice }}</p>
+                <p>Quantity: {{ detail.orderQty }}</p>
+
+                <!-- Mostra il totale per il prodotto -->
+                <p><strong>Total per product:</strong> €{{ detail.lineTotal }}</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Mostra il prezzo totale dell'ordine -->
+      <div class="total-price">
+
+        <div class="price-container">
+          <div class="price-row">
+            <span>Subtotal:</span>
+            <span>{{ order.subTotal }}€</span>
+          </div>
+          <div class="price-row">
+            <span>Shipping: </span>
+            <span>{{ order.freight }}€</span>
+          </div>
+          <div class="price-row">
+            <span>Tax: </span>
+            <span>{{ order.taxAmt }}€</span>
+          </div>
+          <hr>
+          <div class="price-row">
+            <h5>Total order: </h5>
+            <h5>€{{ order.totalDue }}€</h5>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Se non ci sono ordini -->
+  <ng-template #noOrders>
+    <p>You haven't placed any orders yet.</p>
+  </ng-template>
+</div>

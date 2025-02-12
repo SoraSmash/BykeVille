@@ -1,0 +1,95 @@
+.on-sale-item {
+  border: 1px solid #2B2F35;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  width: 250px;
+
+}
+
+.on-sale-item img {
+  width: 100%;
+  height: auto;
+  max-width: 255px;
+  border-radius: 8px;
+}
+
+.price {
+  font-weight: bold;
+  color: #E34715;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.on-sale-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.on-sale-item {
+  border: 1px solid #2B2F35;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  background-color: #1A1C20;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.on-sale-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.on-sale-item .price {
+  font-weight: bold;
+  color: #E34715;
+  margin-top: 10px;
+}
+
+.secondary-navbar {
+  position: relative;
+}
+
+.categories-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #111216;
+  /* Sfondo scuro */
+  border: 1px solid #2B2F35;
+  /* Bordo scuro */
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  /* Ombra marcata */
+  z-index: 1000;
+  width: 100%;
+}
+
+.categories-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.categories-dropdown ul li {
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #797C7F;
+  transition: all 0.3s ease;
+  /* Transizione per hover */
+}
+
+.categories-dropdown ul li:hover {
+  background-color: #E34715;
+  color: #111216;
+}

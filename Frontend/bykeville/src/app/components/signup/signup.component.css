@@ -1,0 +1,77 @@
+.card {
+    color: #797C7F;
+    background-color: #1A1C20;
+    border: 1px solid #2E3339;
+    margin-bottom: 40px;
+}
+
+.card-title {
+    color: #E34715;
+}
+
+.form-check-input:checked {
+    background-color: #E34715;
+    border-color: #E34715;
+    ;
+}
+
+.form-check-input {
+
+    background-color: #2B2F35;
+    border: var(--bs-border-width) solid #797C7F;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.BVlogo {
+    max-height: 150px;
+    max-width: 100%;
+    object-fit: contain;
+    padding-top: 15px;
+    margin: 0;
+}
+
+.invalid-feedback{
+    color:#E34715;
+}
+
+.required-text{
+    padding-top:15px;
+}
+
+.form-control-alt.is-invalid{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23E34715'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23E34715' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+
+.form-control-alt {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #797C7F;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #111216;
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid #2B2F35;
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+
+.form-control-alt:focus{
+    outline: 2px solid #E34715 !important;
+    box-shadow: #E34715 !important;
+
+}

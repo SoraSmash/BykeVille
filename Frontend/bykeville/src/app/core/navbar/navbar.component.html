@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+  <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Aggiungi il file JavaScript di Bootstrap se non è già presente -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <div class="container-fluid">
+
+    <a class="navbar-brand" routerLink="/productnews">
+      <img src="Logo_c.png" alt="BykeVille" class="navbar-logo">
+    </a>
+
+    <!-- Bottone hamburger per dispositivi mobili -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">☰</span>
+    </button>
+
+    <!-- Menu di navigazione per desktop e mobile -->
+    <div class="navbar-nav collapse navbar-collapse" id="navbarNav">
+      <ul class="menu">
+
+        <!--Itera sulle categorie principali-->
+        <li *ngFor="let category of categories" class="nav-item dropdown" (mouseenter)="showSubCategories(category)"
+          (mouseleave)="hideCategories()">
+          <a class="nav-link dropdown-toggle" role="button" id="navbarDropdownMenuLink" data-bs-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            {{category.name}}
+          </a>
+          <!-- Sottocategorie per la categoria selezionata -->
+          <div *ngIf="currentSubCategories.length > 0" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a *ngFor="let subcategory of currentSubCategories" class="dropdown-item"
+              [routerLink]="'/products/' + encodeUrl(subcategory.name)">
+              {{subcategory.name}}
+            </a>
+          </div>
+        </li>
+      </ul>
+
+      <input type="search" id="search" autocomplete="off" placeholder="Search..." [(ngModel)]="searchText"
+        class="search-bar" (keyup.enter)="onSearch()" />
+      <a *ngIf="!auth.GetLoginInfo()" class="nav-link" routerLink="/login">Login</a>
+      <a *ngIf="auth.GetLoginInfo()" class="nav-link" routerLink="/logout">Logout</a>
+      <a *ngIf="!auth.GetLoginInfo()" class="nav-link" routerLink="/signup">SignUp</a>
+      <span *ngIf="auth.GetLoginInfo()" routerLink="/account" class="nav-item">
+        <i class="material-icons">account_circle</i> Profile
+      </span>
+      <span class="nav-item">
+        <a class="nav-item nav-link" routerLink="/cart">
+          <span class="cart-badge" [attr.data-count]="totalItemsInCart">{{ totalItemsInCart }}</span>
+          <i class="material-icons">shopping_cart</i> My Cart
+        </a>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

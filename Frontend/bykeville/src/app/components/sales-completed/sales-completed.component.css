@@ -1,0 +1,22 @@
+.order-completed-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+
+.card {
+  color: #797C7F ;
+  background-color: #1A1C20;
+  border: 1px solid #2E3339; 
+  padding:20px;
+}
+
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}

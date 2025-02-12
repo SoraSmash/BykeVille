@@ -1,0 +1,58 @@
+<div class="container py-4">
+  <img src="Logo_c.png" alt="BykeVille" class="BVlogo">
+
+  <h3>Log in to your BykeVille account</h3>
+
+    <div class="row justify-content-center">
+      <div class="col-md-9 col-lg-6">
+
+        <div class="border border-success-subtle rounded p-4">
+          <form method="POST" action="">
+            
+            <label for="email" class="form-label">Email</label>
+            <input 
+              id="email" 
+              type="email" 
+              tabindex="1" 
+              #username 
+              class="form-control" 
+              name="username" 
+              required 
+            /><br>
+            
+            <label for="password" class="form-label">Password</label>
+            <input 
+              id="password" 
+              type="password" 
+              tabindex="2" 
+              #password 
+              class="form-control" 
+              name="password" 
+              required 
+            /><br>    
+  
+            <button 
+              type="button" class="BVbutton"
+              (click)="RunLogin(username, password)"
+            >
+              Log in
+            </button>
+
+            <div  class="link">
+            <a href="/forgot-password">Forgot your password?</a>
+            </div>
+          </form>
+        </div>
+
+        <div class="signup-redirect">
+        <h4>Don't have an account?</h4>
+        <button class="BVbutton" (click)="goToSignUp()">Sign up</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+  
+
+

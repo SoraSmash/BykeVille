@@ -1,0 +1,95 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/* STILE GLOBALI */
+
+/* Stile per il body */
+body{
+    font-family: 'Arial', sans-serif;
+    background-color: #111216;
+    color: #666666;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Testo arancione per i titoli */
+h1, h2, h3, h4, h5, h6 {
+    color: #E34715;
+    margin: 0.5em 0;
+    padding-left: 20px;
+}
+
+/* Testo grigio per i comuni morta- Contenuti testuali*/
+p {
+    margin: 0.5em 0;
+    color:#797C7F; 
+}
+
+/* Link (senza Zelda)*/
+a {
+    color: #E34715;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* Bottoni belli */
+.BVbutton {
+    display: block;
+    width: 100%;
+    background-color: #E34715;
+    color: #111216;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease;
+}
+
+.BVbutton:hover {
+    background-color: #D13E12;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-2px); 
+}
+
+.BVbutton:active {
+    background-color: #B63610; 
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); 
+    transform: translateY(1px); 
+}
+
+.BVbutton:focus {
+    outline: 2px solid #E34715; 
+    outline-offset: 2px; 
+}
+
+
+
+/*
+
+I COLORI TUTTI NOSTRI 
+
+Colori scuri: 
+#111216
+#1A1C20
+
+Colori medi:
+#2B2F35
+#2E3339
+
+Colori chiari:
+#666666
+#797C7F
+
+Colore accento:
+#E34715
+
+*/
+

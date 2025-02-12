@@ -1,0 +1,107 @@
+<div class="section-container">
+
+    <div class="cart-container">
+        <h3>Shipping addresses</h3>
+        <hr>
+
+        <!-- Sezione indirizzi -->
+
+            <div *ngIf="addresses.length > 0; else noAddresses" class="address-container">
+
+                <ul class="address-list">
+
+                    <li *ngFor="let address of addresses; let i = index">
+
+                        <div class="address-card" [class.selected]="address === selectedAddress">
+
+
+                            <div class="address-item">
+                                <h3>Address: </h3>
+                                <h3>{{ address.addressLine1 }} {{ address.addressLine2 ? address.addressLine2 : '' }}
+                                </h3>
+
+                            </div>
+                            <div class="address-item">
+                                <p>{{ address.city }}, {{ address.postalCode }} {{ address.stateProvince }} </p>
+                                <p>{{ address.countryRegion }}</p>
+                            </div>
+
+                            <div class="address-button">
+                                <button (click)="deleteNewAddress(address.addressOldId)"
+                                    class="btn-delete">Delete</button>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <!-- Se non ci sono indirizzi-->
+            <ng-template #noAddresses>
+                <p>You haven't added any shipping address yet.</p>
+            </ng-template>
+
+
+            <!-- Sezione per Aggiungere Nuovo Indirizzo -->
+
+
+            <!-- Nuovo Indirizzo -->
+            <div class="new-address-container">
+
+                <h2>Add a new address</h2>
+
+
+                <p class="required-info">Fill in all required fields (*).</p>
+
+                <form (ngSubmit)="addNewAddress()" #addressForm="ngForm">
+                    <div class="input-group">
+                        <label for="addressLine1">Address line 1: <span class="required">*</span></label>
+                        <!-- Aggiunto l'asterisco -->
+                        <input type="text" id="addressLine1" [(ngModel)]="newAddress.addressLine1" name="addressLine1"
+                            required #addressLine1="ngModel" />
+                    </div>
+
+                    <div class="input-group">
+                        <label for="addressLine2">Address line 2:</label>
+                        <input type="text" id="addressLine2" [(ngModel)]="newAddress.addressLine2"
+                            name="addressLine2" />
+                    </div>
+
+                    <div class="input-group">
+                        <label for="city">City: <span class="required">*</span></label> <!-- Aggiunto l'asterisco -->
+                        <input type="text" id="city" [(ngModel)]="newAddress.city" name="city" required
+                            #city="ngModel" />
+                    </div>
+
+                    <div class="input-group">
+                        <label for="stateProvince">State or Province: <span class="required">*</span></label>
+                        <!-- Aggiunto l'asterisco -->
+                        <input type="text" id="stateProvince" [(ngModel)]="newAddress.stateProvince"
+                            name="stateProvince" required #stateProvince="ngModel" />
+                    </div>
+
+                    <div class="input-group">
+                        <label for="countryRegion">Country: <span class="required">*</span></label>
+                        <!-- Aggiunto l'asterisco -->
+                        <input type="text" id="countryRegion" [(ngModel)]="newAddress.countryRegion"
+                            name="countryRegion" required #countryRegion="ngModel" />
+                    </div>
+
+                    <div class="input-group">
+                        <label for="postalCode">Postal code: <span class="required">*</span></label>
+                        <!-- Aggiunto l'asterisco -->
+                        <input type="text" id="postalCode" [(ngModel)]="newAddress.postalCode" name="postalCode"
+                            required #postalCode="ngModel" />
+                    </div>
+
+                    <button type="submit" class="BVbutton" [disabled]="addressForm.invalid">Add address</button>
+                </form>
+
+            </div>
+
+
+        
+
+    </div>
+</div>

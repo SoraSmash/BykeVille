@@ -1,0 +1,64 @@
+<!-- Verifica se il prodotto esiste -->
+<div *ngIf="product" class="product-container">
+    <div class="product-image">
+        <img src="data:image/png;base64,{{ product.thumbNailPhoto }}" alt="{{ product.name }}">
+    </div>
+
+    <div class="product-details">
+        <h3>{{ product.name }}</h3>
+
+        <div class="product-price">
+            <span class="list-price">{{ product.listPrice }}€</span>
+        </div>
+
+        <div class="product-description">
+            <p style="font-weight:bold">Description</p>
+            <p *ngIf="description" class="product-description-text">
+                {{ description }}
+            </p>
+
+            <p *ngIf="product?.size"><span style="font-weight: bold;">Size:</span> {{ product.size }}</p>
+            <p *ngIf="product?.weight"><span style="font-weight: bold;">Weight:</span> {{ product.weight }} kg</p>
+            <p *ngIf="product?.color"><span style="font-weight: bold;">Color:</span> {{ product.color }}</p>
+            
+
+            <!-- Descrizione del prodotto -->
+
+        </div>
+
+<div class="selection-container">
+    <!-- Selezione Colore -->
+    <div *ngIf="uniqueColors.length > 0" class="color-selection">
+        <h3>Select Color</h3>
+        <button *ngFor="let color of uniqueColors" (click)="onColorChange(color)"
+            [class.selected]="color === selectedColor">
+            {{ color ?? 'Nessun colore disponibile' }}
+        </button>
+    </div>
+
+    <!-- Selezione Dimensione -->
+    <div *ngIf="uniqueSizes.length > 0" class="size-selection">
+        <h3>Select Size</h3>
+        <button *ngFor="let size of uniqueSizes" (click)="onSizeChange(size)" [class.selected]="size === selectedSize">
+            {{ size ?? 'Nessuna dimensione disponibile' }}
+        </button>
+    </div>
+</div>
+
+
+        <div class="product-actions">
+            <button class="BVbutton" (click)="addToCart()">Add to Cart</button>
+        </div>
+
+        <div class="product-status" *ngIf="product?.discontinuedDate">
+            <p class="discontinued">This product has been recalled.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Template per il caricamento -->
+<ng-template #loadingTemplate>
+    <div class="loading">
+        <p>Loading the product...</p>
+    </div>
+</ng-template>

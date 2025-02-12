@@ -1,0 +1,210 @@
+/* Contenitore generale */
+
+.section-container {
+  display: grid;
+  grid-template-columns: 1fr; 
+  justify-items: center; 
+  align-items: center; 
+  padding: 20px;
+  background-color: transparent; 
+  max-width: 1200px; 
+  margin:auto;
+}
+  
+/* Container prima colonna */
+.cart-container {
+  background-color: #1A1C20;
+  border: 1px solid #2E3339; 
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  width: 100%; /* Occupa tutto lo spazio disponibile */
+  max-width: 800px; /* Mantieni un limite massimo */
+}
+
+
+h3 {
+  padding: 0;
+  color: #E34715;
+  }
+
+  * SEZIONE INDIRIZZI */
+
+  /* Containers */
+  .address-container{
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .address-container h2{
+    margin-top:0;
+    padding-top: 0;
+  }
+  
+  /* Indirizzi */
+  
+  .address-list {
+    gap: 15px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .address-list li{
+    margin-bottom: 15px;
+  }
+  
+  .address-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #1A1C20; 
+    border-bottom: 1px solid #2E3339;
+  }
+  
+  .address-card h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+  
+  }
+  
+  .address-card p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .address-item{
+    flex:1;
+    margin: 0 10px;
+  }
+
+
+/* SELECTED */
+.address-card.selected {
+  background-color: #1A1C20; 
+  border: 2px solid #E34715; 
+  border-radius:8px;
+  box-shadow: 0 4px 10px rgba(150, 150, 150, 0.2); 
+}
+
+.address-card.selected h3 {
+  font-weight:bold;
+}
+
+.address-card.selected p {
+  color: #797C7F; 
+  font-weight:bold;
+}
+
+.address-button{
+  flex: 1; 
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-end;
+}
+
+
+/* Pulsante per selezionare l'indirizzo */
+.address-button .BVbutton {
+  width:50%;
+  transition: background-color 0.3s ease;
+  margin-bottom: 5px;
+}
+
+/* Pulsante per eliminare l'indirizzo */
+.address-button .btn-delete {
+  width:50%;
+  background-color: #2E3339;
+  color: #797C7F;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.address-card .btn-delete:hover {
+  background-color: #2B2F35; 
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
+  transform: translateY(-2px); 
+}
+
+  
+
+/* Section per aggiungere un nuovo indirizzo */
+.new-address-container {
+  background-color: #1A1C20; 
+
+}
+
+.new-address-container h2 {
+  text-align: left;
+  font-size: 1.6rem;
+  color: #E34715;
+  margin:0;
+  padding:0;
+}
+
+.new-address-container form {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.new-address-container .input-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.new-address-container .input-group label {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.new-address-container input {
+  background-color:#111216;
+  color:#666666;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #2B2F35;
+  font-size: 1rem;
+}
+
+.new-address-container input::placeholder{
+  color:#2E3339;
+  font-style: italic;
+}
+
+.new-address-container input:focus{
+  border-color:#E34715;
+  outline: none;
+}
+
+.new-address-container .BVbutton {
+  padding: 12px;
+  width: auto;
+  align-self: center;
+}
+
+
+.error-message {
+  color: #E34715;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.required {
+  color: #E34715;
+  font-weight: bold;
+}
+
+.required-info {
+  font-size: 0.9em;
+  color: #E34715;
+  margin-top: 10px;
+  padding-left: 15px;
+}
+
+  

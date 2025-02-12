@@ -1,0 +1,197 @@
+<div class="section-container">
+
+  <div class="cart-container">
+    <h3>Shipping Addresses</h3>
+    <hr>
+
+    <!-- Sezione indirizzi -->
+
+    <div class="addresses-column">
+
+      <!-- Lista Indirizzi di Spedizione -->
+
+      <div *ngIf="addresses.length > 0; else noAddresses" class="address-container">
+
+        <ul class="address-list">
+
+          <li *ngFor="let address of addresses; let i = index">
+
+            <div class="address-card" [class.selected]="address === selectedAddress">
+
+
+              <div class="address-item">
+                <h3>Address: </h3>
+                <h3>{{ address.addressLine1 }} {{ address.addressLine2 ? address.addressLine2 : '' }}</h3>
+
+              </div>
+              <div class="address-item">
+                <p>{{ address.city }}, {{ address.postalCode }} {{ address.stateProvince }} </p>
+                <p>{{ address.countryRegion }}</p>
+              </div>
+
+              <div class="address-button">
+                <button (click)="selectAddress(address)" class="BVbutton">Select</button>
+                <button (click)="deleteNewAddress(address.addressOldId)" class="btn-delete">Delete</button>
+              </div>
+
+            </div>
+          </li>
+        </ul>
+      </div>
+
+
+
+
+
+
+      <!-- Nuovo Indirizzo -->
+      <div class="new-address-container">
+
+        <h2>Add a new address</h2>
+
+
+        <p class="required-info">Fill in all required fields (*).</p>
+
+        <form (ngSubmit)="addNewAddress()" #addressForm="ngForm">
+          <div class="input-group">
+            <label for="addressLine1">Address line 1: <span class="required">*</span></label>
+            <!-- Aggiunto l'asterisco -->
+            <input type="text" id="addressLine1" [(ngModel)]="newAddress.addressLine1" name="addressLine1" required
+              #addressLine1="ngModel" />
+          </div>
+
+          <div class="input-group">
+            <label for="addressLine2">Address line 2:</label>
+            <input type="text" id="addressLine2" [(ngModel)]="newAddress.addressLine2" name="addressLine2" />
+          </div>
+
+          <div class="input-group">
+            <label for="city">City: <span class="required">*</span></label> <!-- Aggiunto l'asterisco -->
+            <input type="text" id="city" [(ngModel)]="newAddress.city" name="city" required #city="ngModel" />
+          </div>
+
+          <div class="input-group">
+            <label for="stateProvince">State or Province: <span class="required">*</span></label> <!-- Aggiunto l'asterisco -->
+            <input type="text" id="stateProvince" [(ngModel)]="newAddress.stateProvince" name="stateProvince" required
+              #stateProvince="ngModel" />
+          </div>
+
+          <div class="input-group">
+            <label for="countryRegion">Country: <span class="required">*</span></label> <!-- Aggiunto l'asterisco -->
+            <input type="text" id="countryRegion" [(ngModel)]="newAddress.countryRegion" name="countryRegion" required
+              #countryRegion="ngModel" />
+          </div>
+
+          <div class="input-group">
+            <label for="postalCode">Postal code: <span class="required">*</span></label> <!-- Aggiunto l'asterisco -->
+            <input type="text" id="postalCode" [(ngModel)]="newAddress.postalCode" name="postalCode" required
+              #postalCode="ngModel" />
+          </div>
+
+          <button type="submit" class="BVbutton" [disabled]="addressForm.invalid">Add Address</button>
+        </form>
+
+      </div>
+
+
+
+      <!-- Sezione per Aggiungere Nuovo Indirizzo -->
+      <ng-template #noAddresses>
+        <p>You haven't added any shipping address yet.</p>
+      </ng-template>
+    </div>
+
+
+
+
+
+  </div>
+
+
+
+
+  <div class="total-container">
+    <!-- Show the total order price -->
+    <div class="total-price">
+      <h3>Order Summary</h3>
+      <hr>
+      <div class="price-row">
+        <span>Subtotal:</span>
+        <span>{{ salesOrderHeader[0].subTotal }}€</span>
+      </div>
+      <div class="price-row">
+        <span>Shipping: </span>
+        <span>{{ salesOrderHeader[0].freight }}€</span>
+      </div>
+      <div class="price-row">
+        <span>Taxes: </span>
+        <span>{{ salesOrderHeader[0].taxAmt }}€</span>
+      </div>
+      <hr>
+      <div class="price-row">
+        <span>Total Order: </span>
+        <span>€{{ salesOrderHeader[0].totalDue }}</span>
+      </div>
+    </div>
+
+    <!-- Se l'array è vuoto, mostra un messaggio -->
+    <ng-template #noProducts>
+      <p>You have not yet added products to your order.</p>
+    </ng-template>
+
+
+    <!-- Pagamento qui ex: class="payment-section"-->
+<hr>
+<h3>Payment Method</h3>
+
+<form id="paymentForm" class="payment-form">
+
+  <label for="paymentMethod" class="payment-label">Choose a payment method:</label>
+
+  <select id="paymentMethod" name="paymentMethod" [(ngModel)]="paymentMethod" required class="payment-select">
+    <option value="" disabled selected>Select a method</option>
+    <option value="creditCard">Credit Card</option>
+    <option value="paypal">PayPal</option>
+    <option value="bankTransfer">Bank Transfer</option>
+  </select>
+
+  <hr>
+  <!-- Credit Card Section -->
+  <div *ngIf="paymentMethod === 'creditCard'" class="payment-section">
+    <label for="creditCardNumber">Credit Card Number:</label>
+    <input type="text" id="creditCardNumber" name="creditCardNumber" placeholder="1234 5678 9101 1121" required>
+
+    <label for="expiryDate">Expiration Date:</label>
+    <input type="month" id="expiryDate" name="expiryDate" required>
+
+    <label for="cvv">CVV:</label>
+    <input type="text" id="cvv" name="cvv" placeholder="123" required>
+  </div>
+
+  <!-- PayPal Section -->
+  <div *ngIf="paymentMethod === 'paypal'" class="payment-section">
+    <p>Log in to your PayPal account to complete the payment.</p>
+    <button type="button" id="paypalButton" class="BVbutton">Log in with PayPal</button>
+  </div>
+
+  <!-- Bank Transfer Section -->
+  <div *ngIf="paymentMethod === 'bankTransfer'" class="payment-section">
+    <label for="bankAccount">Bank Account IBAN:</label>
+    <input type="text" id="bankAccount" name="bankAccount" placeholder="IT60X0542811101000000123456" required>
+  </div>
+  <hr>
+  <!-- Button to complete the payment -->
+  <button (click)="confirmOrder()" type="submit" class="BVbutton">Buy</button>
+  <div *ngIf="errorMessage" class="error-message">
+    <p>{{ errorMessage }}</p>
+  </div>
+</form>
+
+
+
+
+  </div>
+
+
+
+</div>

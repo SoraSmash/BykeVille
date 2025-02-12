@@ -1,0 +1,58 @@
+
+.form-control{
+  flex-grow: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #2B2F35;
+  border-radius: 4px;
+  background-color: #111216; 
+  color: #666666; 
+  
+}
+
+.border{
+  border: 1px solid #2B2F35 !important; 
+  color: #797C7F ;
+  background-color: #1A1C20;
+}
+
+.BVlogo {
+  max-height: 150px; 
+  max-width: 100%; 
+  object-fit: contain; 
+  padding-top:15px;
+  margin:0;
+}
+
+.container {
+  display: flex; 
+  justify-content: center;  
+  flex-direction: column;    
+}
+
+.container h3{
+  text-align:center;
+  padding: 20px;
+}
+
+.link{
+  padding-top: 20px;
+}
+
+.signup-redirect{
+  display: flex; 
+  justify-content: center;  
+  align-items: center;  
+  flex-direction: column;
+  text-align: center,
+}
+
+.signup-redirect h4{
+  color:#666666;
+  padding: 15px;
+}
+
+.signup-redirect .BVbutton{
+  width:fit-content;
+  padding-bottom: 15px;
+}
